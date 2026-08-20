@@ -1,0 +1,91 @@
+# Urban Heat Mitigation System Configuration
+# Modify these settings to adapt to any target city
+
+city:
+  name: "Delhi"
+  country: "India"
+  center_lat: 28.6139
+  center_lon: 77.2090
+  timezone: "Asia/Kolkata"
+
+grid:
+  rows: 200          # Grid rows (increase for higher resolution)
+  cols: 200          # Grid columns
+  resolution_m: 100  # Spatial resolution in meters (100m = 0.1km per pixel)
+  seed: 42           # Random seed for reproducibility
+
+data:
+  lst_range_celsius: [28, 55]    # Min/Max Land Surface Temperature range
+  ndvi_range: [-0.1, 0.85]       # NDVI range (negative=water, high=dense veg)
+  albedo_range: [0.05, 0.65]     # Surface albedo range
+  building_height_range: [0, 60] # Building height in meters
+  humidity_range: [20, 90]       # Relative humidity %
+  wind_speed_range: [0.5, 8.0]   # Wind speed m/s
+  air_temp_range: [25, 42]       # Air temperature Celsius
+
+lulc:
+  classes:
+    0: "Water"
+    1: "Dense Vegetation / Forest"
+    2: "Sparse Vegetation / Parks"
+    3: "Agricultural Land"
+    4: "Low-density Residential"
+    5: "High-density Residential"
+    6: "Commercial / Industrial"
+    7: "Barren / Construction"
+  fractions: [0.03, 0.05, 0.08, 0.07, 0.22, 0.28, 0.18, 0.09]
+
+ml:
+  test_size: 0.2
+  random_state: 42
+  xgboost:
+    n_estimators: 300
+    max_depth: 7
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+  physics_lambda: 0.15          # Weight for physics constraint penalty in PIML
+  cv_folds: 5
+
+cooling_scenarios:
+  budget_units: 1000            # Total intervention budget units
+  interventions:
+    urban_greening:
+      label: "Urban Greening (Trees + Parks)"
+      ndvi_delta: +0.3
+      albedo_delta: -0.05
+      cost_per_cell: 8
+      color: "#2d8a4e"
+    cool_roofs:
+      label: "Cool Roofs (High Albedo Coating)"
+      albedo_delta: +0.25
+      ndvi_delta: 0.0
+      cost_per_cell: 5
+      color: "#e8e8e8"
+    green_roofs:
+      label: "Green Roofs"
+      ndvi_delta: +0.15
+      albedo_delta: +0.05
+      cost_per_cell: 12
+      color: "#6abf69"
+    water_bodies:
+      label: "Water Bodies / Blue Infrastructure"
+      ndvi_delta: +0.05
+      albedo_delta: -0.10
+      moisture_delta: +0.2
+      cost_per_cell: 20
+      color: "#4fc3f7"
+
+optimization:
+  algorithm: "greedy"           # 'greedy' (fast) or 'genetic'
+  budget_units: 50000           # Total intervention budget units
+  population_size: 80
+  n_generations: 50
+  mutation_prob: 0.15
+  crossover_prob: 0.7
+  max_coverage_fraction: 0.35   # Max fraction of city that can be intervened
+
+output:
+  dpi: 150
+  map_colormap: "RdYlGn_r"
+  hotspot_significance: 0.05    # p-value threshold for hotspot detection

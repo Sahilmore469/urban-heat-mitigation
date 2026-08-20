@@ -1,0 +1,17 @@
+feature,label,mean_abs_shap,pct_contribution,rank
+lulc,Land Use / Land Cover,2.6287036,70.59601,1
+wind_speed,Wind Speed,0.38787216,10.416628,2
+air_temp,Air Temperature (ERA5),0.24891911,6.684929,3
+albedo,Surface Albedo,0.21758461,5.843415,4
+lulc_4,LULC: Low-density Residential,0.06356735,1.7071538,5
+ndvi,Vegetation Index (NDVI),0.058873516,1.581097,6
+humidity,Relative Humidity,0.0573939,1.5413607,7
+lulc_2,LULC: Sparse Vegetation,0.015384687,0.4131685,8
+svf,Sky View Factor,0.013995014,0.37584767,9
+impervious_fraction,Impervious Surface Fraction,0.010219302,0.27444783,10
+lulc_6,LULC: Commercial/Industrial,0.0076115206,0.20441368,11
+lulc_5,LULC: High-density Residential,0.0074087847,0.19896907,12
+building_height,Building Height,0.004404646,0.11829041,13
+lulc_0,LULC: Water,0.001648265,0.044265524,14
+lulc_1,LULC: Dense Vegetation,0.0,0.0,15
+lulc_3,LULC: Agriculture,0.0,0.0,16

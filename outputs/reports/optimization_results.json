@@ -1,0 +1,13 @@
+{
+  "algorithm": "Greedy Budget-Constrained",
+  "budget_total": 50000,
+  "budget_used": 50000,
+  "budget_remaining": 0,
+  "total_cells_allocated": 6250,
+  "area_covered_km2": 62.5,
+  "intervention_allocation": {
+    "urban_greening": 6250
+  },
+  "mean_cooling_hotspots_C": 0.497,
+  "mean_cooling_city_C": 0.106
+}
