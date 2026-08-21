@@ -22,3 +22,8 @@ pysal>=23.7
 libpysal>=4.7.0
 esda>=2.5.0
 statsmodels>=0.14.0
+
+xarray>=2023.0.0
+cdsapi>=0.6.0
+earthengine-api>=0.1.370
+netCDF4>=1.6.0
