@@ -1,17 +1,17 @@
 feature,label,mean_abs_shap,pct_contribution,rank
-lulc,Land Use / Land Cover,2.6287036,70.59601,1
-wind_speed,Wind Speed,0.38787216,10.416628,2
-air_temp,Air Temperature (ERA5),0.24891911,6.684929,3
-albedo,Surface Albedo,0.21758461,5.843415,4
-lulc_4,LULC: Low-density Residential,0.06356735,1.7071538,5
-ndvi,Vegetation Index (NDVI),0.058873516,1.581097,6
-humidity,Relative Humidity,0.0573939,1.5413607,7
-lulc_2,LULC: Sparse Vegetation,0.015384687,0.4131685,8
-svf,Sky View Factor,0.013995014,0.37584767,9
-impervious_fraction,Impervious Surface Fraction,0.010219302,0.27444783,10
-lulc_6,LULC: Commercial/Industrial,0.0076115206,0.20441368,11
-lulc_5,LULC: High-density Residential,0.0074087847,0.19896907,12
-building_height,Building Height,0.004404646,0.11829041,13
-lulc_0,LULC: Water,0.001648265,0.044265524,14
-lulc_1,LULC: Dense Vegetation,0.0,0.0,15
-lulc_3,LULC: Agriculture,0.0,0.0,16
+lulc,Land Use / Land Cover,2.7063615,70.80193,1
+wind_speed,Wind Speed,0.37939265,9.925405,2
+air_temp,Air Temperature (ERA5),0.23825203,6.2329826,3
+albedo,Surface Albedo,0.18468869,4.831696,4
+ndvi,Vegetation Index (NDVI),0.13535881,3.5411623,5
+lulc_4,LULC: Low-density Residential,0.059351634,1.5527159,6
+humidity,Relative Humidity,0.053358812,1.3959359,7
+lulc_0,LULC: Water,0.017743519,0.46419346,8
+svf,Sky View Factor,0.014517294,0.37979126,9
+lulc_2,LULC: Sparse Vegetation,0.013057263,0.34159496,10
+impervious_fraction,Impervious Surface Fraction,0.009001888,0.2355011,11
+lulc_6,LULC: Commercial/Industrial,0.0076107024,0.19910587,12
+building_height,Building Height,0.00374514,0.09797773,13
+lulc_1,LULC: Dense Vegetation,0.0,0.0,14
+lulc_3,LULC: Agriculture,0.0,0.0,15
+lulc_5,LULC: High-density Residential,0.0,0.0,16

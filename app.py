@@ -76,13 +76,20 @@ st.markdown("""
 @st.cache_resource(show_spinner="Generating city data...")
 def load_pipeline():
     """Load and cache the full pipeline (run once per session)."""
-    from src.data_pipeline.synthetic_data import load_config, generate_city_grid, grid_to_dataframe
+    from src.data_pipeline.synthetic_data import load_config, grid_to_dataframe
+    from src.data_pipeline.process_real_data import load_real_city_grid
     from src.heat_analysis.heat_stress_index import utci_approximation, wbgt_outdoor, classify_heat_stress
     from src.heat_analysis.hotspot_detector import detect_hotspots
     from src.ml_models.piml_model import train_piml_pipeline, predict_full_grid
 
     config = load_config("config.yaml")
-    data = generate_city_grid(config)
+    data = load_real_city_grid(config)
+    
+    # FIX: Ensure dictionary keys exactly match what grid_to_dataframe expects
+    if "lat" in data: data["lat_grid"] = data.pop("lat")
+    if "lon" in data: data["lon_grid"] = data.pop("lon")
+    if "is_water" in data: data["water_mask"] = data.pop("is_water")
+    
     df = grid_to_dataframe(data)
 
     utci = utci_approximation(data["air_temp"], data["humidity"], data["lst"], data["wind_speed"])
@@ -281,7 +288,7 @@ def main():
 
         with map_col1:
             st.markdown("#### Land Surface Temperature")
-            fig = make_lst_map(data["lst"], config, "Baseline LST (Simulated Landsat)")
+            fig = make_lst_map(data["lst"], config, "Baseline LST (Real Landsat-9)")
             st.image(fig_to_bytes(fig), use_container_width=True)
 
             st.markdown("#### UTCI Heat Stress")

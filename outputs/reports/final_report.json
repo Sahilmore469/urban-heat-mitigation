@@ -2,53 +2,53 @@
   "city": "Delhi",
   "grid_size": "200\u00d7200",
   "total_cells": 40000,
-  "analysis_timestamp": "2026-08-21 02:17:05",
-  "runtime_seconds": 38.8,
+  "analysis_timestamp": "2026-08-21 01:05:23",
+  "runtime_seconds": 41.6,
   "heat_stress": {
-    "utci_mean_C": 31.52,
+    "utci_mean_C": 31.6,
     "utci_max_C": 43.86,
     "extreme_stress_pct": 8.51,
-    "wbgt_mean_C": 27.75
+    "wbgt_mean_C": 27.79
   },
   "hotspots": {
     "total_cells": 40000,
-    "n_extreme_hotspots": 8271,
-    "n_hotspot_cells": 8508,
-    "n_coldspot_cells": 29721,
-    "hotspot_fraction_pct": 21.27,
-    "mean_lst_hotspot_C": 38.42,
-    "mean_lst_overall_C": 30.28,
-    "lst_excess_C": 8.15,
-    "max_gi_star": 24.35
+    "n_extreme_hotspots": 9111,
+    "n_hotspot_cells": 9526,
+    "n_coldspot_cells": 28511,
+    "hotspot_fraction_pct": 23.82,
+    "mean_lst_hotspot_C": 37.92,
+    "mean_lst_overall_C": 30.46,
+    "lst_excess_C": 7.45,
+    "max_gi_star": 24.078
   },
   "ml_model": {
     "model": "XGBoost (Physics-Informed)",
     "r2": 1.0,
-    "rmse_C": 0.0188,
-    "mae_C": 0.0078,
-    "physics_penalty": 0.8179,
-    "piml_score": 0.8773
+    "rmse_C": 0.0193,
+    "mae_C": 0.0079,
+    "physics_penalty": 0.7639,
+    "piml_score": 0.8854
   },
   "top_3_drivers": [
     {
       "label": "Land Use / Land Cover",
-      "pct_contribution": 70.59600830078125
+      "pct_contribution": 70.80193328857422
     },
     {
       "label": "Wind Speed",
-      "pct_contribution": 10.416627883911133
+      "pct_contribution": 9.92540454864502
     },
     {
       "label": "Air Temperature (ERA5)",
-      "pct_contribution": 6.684928894042969
+      "pct_contribution": 6.232982635498047
     }
   ],
   "best_single_intervention": "Urban Greening (Trees + Parks)",
   "optimal_strategy": {
     "budget_used": 50000,
     "area_covered_km2": 62.5,
-    "mean_cooling_hotspots_C": 0.497,
-    "mean_cooling_city_C": 0.106,
+    "mean_cooling_hotspots_C": 0.481,
+    "mean_cooling_city_C": 0.114,
     "intervention_mix": {
       "urban_greening": 6250
     }
